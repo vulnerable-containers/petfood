@@ -61,3 +61,24 @@ Below is a plan organized by larger tasks and their sub-tasks, color-coded by pr
     </tr>
   </tbody>
 </table>
+
+## Important notes
+
+### Moving the whole app to inertia
+The current email verification doesnt have to be used so need to rewrite routes that point to the verifications.
+
+### Translations
+When moving the app translations, nothing has to be changed, but when i want to translate any of the species names or foods that are stored in the database, i will need a different approach.
+
+`php artisan vendor:publish --provider="Outhebox\TranslationsUI\TranslationsUIServiceProvider" --tag=assets`
+
+<!-- php artisan translations:publish -->
+
+the actual asset publishing happened with this command:
+reference from the github repo
+https://github.com/MohmmedAshraf/laravel-translations
+Before you can access the translations UI, you'll need to publish the package's assets and migrations files by running the following command:
+
+php artisan translations:install
+
+my own apps assets are published seperately with npm run build or run dev.
